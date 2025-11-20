@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="InsideOut Renovations - Premier home renovation and remodeling contractor in Lincoln, NE. Kitchen remodeling, bathroom renovations, basement finishing, and more. 4.9★ rated with 6 years of excellence. Call (402) 474-0028 for a free quote.">
+    <meta name="keywords" content="Lincoln NE home renovation, kitchen remodeling Lincoln, bathroom remodeling Lincoln Nebraska, basement finishing Lincoln, home additions Lincoln NE, InsideOut Renovations, Jeremy Larson contractor">
+    <title>InsideOut Renovations | Lincoln NE Home Remodeling & Renovation Contractor</title>
+
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Color Variables */
+        :root {
+            --navy: #1a2b4a;
+            --dark-gray: #2d3436;
+            --orange: #ff6b35;
+            --orange-hover: #e55a2b;
+            --light-gray: #f5f6fa;
+            --white: #ffffff;
+            --text-dark: #2d3436;
+            --text-light: #636e72;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            padding: 0.5rem 0;
+            background-color: rgba(26, 43, 74, 0.98);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--orange);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: var(--orange);
+        }
+
+        .header-cta {
+            background-color: var(--orange);
+            color: var(--white);
+            padding: 0.7rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .header-cta:hover {
+            background-color: var(--orange-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--white);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, #2c3e50 100%);
+            color: var(--white);
+            padding: 140px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="%231a2b4a"/><circle cx="50" cy="50" r="1" fill="%23ffffff" opacity="0.1"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero h1 span {
+            color: var(--orange);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .badge-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--orange);
+        }
+
+        .badge-text {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.6s both;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--orange);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--orange-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--white);
+            color: var(--navy);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Services Section */
+        .services {
+            background-color: var(--light-gray);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose-us {
+            background-color: var(--white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--orange);
+            margin-bottom: 1rem;
+        }
+
+        .feature h3 {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .feature p {
+            color: var(--text-light);
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--dark-gray);
+            color: var(--white);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--orange);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Reviews Section */
+        .reviews {
+            background-color: var(--light-gray);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .review-card {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .reviewer-name {
+            font-weight: bold;
+            color: var(--text-dark);
+        }
+
+        .stars {
+            color: #ffd700;
+            font-size: 1.1rem;
+        }
+
+        .review-text {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        .google-badge {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background-color: var(--white);
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        .google-rating {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--text-dark);
+        }
+
+        .google-rating .stars {
+            color: #ffd700;
+            margin-left: 0.5rem;
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            background-color: var(--white);
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            position: relative;
+        }
+
+        .step {
+            text-align: center;
+            padding: 2rem 1rem;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background-color: var(--orange);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1.5rem;
+        }
+
+        .step h3 {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .step p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background-color: var(--light-gray);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--white);
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            color: var(--text-dark);
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background-color: var(--light-gray);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--orange);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer.active {
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, var(--navy) 0%, #2c3e50 100%);
+            color: var(--white);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .contact-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--orange);
+        }
+
+        .contact-item a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--orange);
+        }
+
+        .map-container {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            height: 400px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0f1419;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 3rem 20px 1.5rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            line-height: 2;
+            display: block;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--orange);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--orange);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: var(--navy);
+                flex-direction: column;
+                padding: 2rem;
+                transition: left 0.3s ease;
+                gap: 1.5rem;
+                align-items: flex-start;
+            }
+
+            nav.active {
+                left: 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .hero-badges {
+                gap: 1rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .services-grid,
+            .features-grid,
+            .reviews-grid,
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 120px 20px 60px;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="header-container">
+            <a href="#" class="logo">InsideOut<span>Renovations</span></a>
+            <nav id="nav">
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#faq">FAQ</a>
+                <a href="tel:4024740028" class="header-cta">(402) 474-0028</a>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Transform Your Home with <span>Expert Craftsmanship</span></h1>
+            <p>Lincoln's trusted home renovation contractor since 2019. From kitchens to basements, we bring your vision to life with quality workmanship and personalized service.</p>
+
+            <div class="hero-badges">
+                <div class="badge">
+                    <div class="badge-number">4.9★</div>
+                    <div class="badge-text">Google Rating</div>
+                </div>
+                <div class="badge">
+                    <div class="badge-number">6</div>
+                    <div class="badge-text">Years Experience</div>
+                </div>
+                <div class="badge">
+                    <div class="badge-number">27+</div>
+                    <div class="badge-text">Happy Clients</div>
+                </div>
+                <div class="badge">
+                    <div class="badge-number">4K+</div>
+                    <div class="badge-text">Instagram Followers</div>
+                </div>
+            </div>
+
+            <div class="cta-buttons">
+                <a href="tel:4024740028" class="btn btn-primary">Call Now: (402) 474-0028</a>
+                <a href="#contact" class="btn btn-secondary">Get Free Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>Comprehensive home renovation solutions tailored to your needs in Lincoln, NE</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🍳</div>
+                    <h3>Kitchen Remodeling</h3>
+                    <p>Transform your kitchen into a modern, functional space. Custom cabinets, countertops, lighting, and complete kitchen renovations.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🚿</div>
+                    <h3>Bathroom Remodeling</h3>
+                    <p>Create your dream bathroom with expert tile work, vanity installation, shower upgrades, and full bathroom renovations.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Basement Finishing</h3>
+                    <p>Maximize your home's potential with professional basement finishing. Entertainment rooms, home offices, and additional living space.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📐</div>
+                    <h3>Home Additions</h3>
+                    <p>Expand your living space with expertly designed and built home additions that blend seamlessly with your existing structure.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Interior Painting</h3>
+                    <p>Professional interior painting services to refresh your home. Quality prep work and flawless finish guaranteed.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📏</div>
+                    <h3>Flooring Installation</h3>
+                    <p>Expert installation of hardwood, laminate, tile, and vinyl flooring. Quality materials and precise craftsmanship.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🔨</div>
+                    <h3>Custom Carpentry</h3>
+                    <p>Skilled custom carpentry for built-ins, trim work, crown molding, and unique woodworking projects.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🏡</div>
+                    <h3>General Renovations</h3>
+                    <p>Complete home renovation services. Whether it's a single room or whole-house remodel, we've got you covered.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us" id="why-choose">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose InsideOut Renovations</h2>
+                <p>What sets us apart as Lincoln's premier renovation contractor</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">✅</div>
+                    <h3>Professional & Punctual</h3>
+                    <p>We respect your time and maintain the highest standards of professionalism on every job.</p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">💬</div>
+                    <h3>Clear Communication</h3>
+                    <p>Step-by-step updates throughout your project. You'll always know what's happening.</p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">⭐</div>
+                    <h3>Quality Craftsmanship</h3>
+                    <p>Expert workmanship on every project. We take pride in delivering exceptional results.</p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">👤</div>
+                    <h3>Personal Attention</h3>
+                    <p>Direct access to Jeremy and our experienced crew. Your project matters to us.</p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">💰</div>
+                    <h3>Transparent Pricing</h3>
+                    <p>No hidden fees or surprise costs. Clear, honest pricing from start to finish.</p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">🏘️</div>
+                    <h3>Local & Family-Owned</h3>
+                    <p>Proud to serve Lincoln, NE. Supporting our community since 2019.</p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Fast Response Times</h3>
+                    <p>Quick to respond to inquiries and start your project. We value your time.</p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Trustworthy & Reliable</h3>
+                    <p>4.9-star rating speaks for itself. Dependable service you can count on.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Meet Jeremy Larson</h2>
+                    <p>Founded in 2019, InsideOut Renovations has quickly become one of Lincoln's most trusted names in home remodeling and renovation. Owner Jeremy P. Larson built this company on the foundation of quality craftsmanship, clear communication, and genuine care for every client.</p>
+                    <p>What started as a passion for transforming homes has grown into a thriving business with 4K+ Instagram followers and an exceptional 4.9-star Google rating from 27+ satisfied clients.</p>
+                    <p>We're not just contractors—we're your partners in creating the home you've always dreamed of. Every project receives Jeremy's personal attention, ensuring your renovation exceeds expectations.</p>
+                    <a href="tel:4024740028" class="btn btn-primary">Call Jeremy Today</a>
+                </div>
+
+                <div class="about-stats">
+                    <div class="stat">
+                        <div class="stat-number">6</div>
+                        <div class="stat-label">Years in Business</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">4.9★</div>
+                        <div class="stat-label">Google Rating</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">27+</div>
+                        <div class="stat-label">5-Star Reviews</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Client Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Clients Say</h2>
+                <p>Real reviews from real Lincoln homeowners</p>
+            </div>
+
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="reviewer-name">Sarah M.</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <p class="review-text">"Jeremy and his team did an outstanding job on our kitchen remodel. They were professional, punctual, and kept us updated every step of the way. The quality of work is exceptional!"</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="reviewer-name">Mike T.</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <p class="review-text">"We couldn't be happier with our bathroom renovation. InsideOut delivered exactly what they promised, on time and within budget. Jeremy's attention to detail is impressive."</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="reviewer-name">Lisa R.</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <p class="review-text">"From start to finish, the communication was excellent. They transformed our basement into a beautiful living space. Highly recommend InsideOut Renovations!"</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="reviewer-name">David K.</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <p class="review-text">"Jeremy is trustworthy and reliable. He worked with us to create a custom solution that fit our needs and budget. The craftsmanship is top-notch."</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="reviewer-name">Jennifer L.</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <p class="review-text">"Best contractor experience we've ever had! Professional, clean, and the results are stunning. Our home addition looks like it was always part of the house."</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="reviewer-name">Tom W.</span>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <p class="review-text">"Jeremy responds quickly and always follows through. The flooring installation was flawless. We'll definitely use InsideOut for our next project!"</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <div class="google-badge">
+                    <div class="google-rating">4.9 <span class="stars">★★★★★</span></div>
+                    <p style="color: var(--text-light); margin-top: 0.5rem;">Based on 27+ Google Reviews</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>Our simple, transparent renovation process</p>
+            </div>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Contact Us</h3>
+                    <p>Call or email to schedule a free consultation. We'll discuss your vision, timeline, and budget for your Lincoln home renovation.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Get Your Quote</h3>
+                    <p>We'll visit your home, assess the project, and provide a detailed, transparent quote with no hidden fees or surprises.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Planning & Design</h3>
+                    <p>Work directly with Jeremy to finalize designs, select materials, and create a timeline that works for your schedule.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Expert Execution</h3>
+                    <p>Our skilled crew brings your vision to life with quality craftsmanship, regular updates, and attention to every detail.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>Final Walkthrough</h3>
+                    <p>We ensure everything meets your expectations before considering the job complete. Your satisfaction is our priority.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">6</div>
+                    <h3>Enjoy Your Space</h3>
+                    <p>Relax and enjoy your beautifully renovated home. We're always here for any questions or future projects!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about working with InsideOut Renovations</p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What areas do you serve in Nebraska?
+                    </div>
+                    <div class="faq-answer">
+                        <p>We primarily serve Lincoln, NE and surrounding areas. Contact us to confirm we serve your specific location.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How long does a typical kitchen remodel take?
+                    </div>
+                    <div class="faq-answer">
+                        <p>Kitchen remodels typically take 3-6 weeks depending on the scope. We'll provide a detailed timeline during your consultation and keep you updated throughout the project.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do you offer free estimates?
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We provide free, no-obligation quotes for all renovation projects. Call (402) 474-0028 to schedule your consultation.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Are you licensed and insured?
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely. InsideOut Renovations is fully licensed and insured to protect you and your property throughout the renovation process.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What payment methods do you accept?
+                    </div>
+                    <div class="faq-answer">
+                        <p>We accept multiple payment methods including checks, credit cards, and bank transfers. We'll discuss payment terms during your quote.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can I see examples of your previous work?
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! Check out our Instagram @insideout_renovations for before-and-after photos and project updates. We have 4K+ followers and regularly post our completed projects.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do you handle permits and inspections?
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we handle all necessary permits and coordinate inspections as required for your Lincoln renovation project.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What makes InsideOut different from other contractors?
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our 4.9-star rating reflects our commitment to quality, communication, and customer service. You'll work directly with owner Jeremy Larson, ensuring personal attention and accountability on every project.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Ready to Transform Your Home?</h2>
+                    <p>Contact InsideOut Renovations today for your free consultation and quote. Let's bring your Lincoln home renovation vision to life!</p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <a href="tel:4024740028"><strong>(402) 474-0028</strong></a>
+                        </div>
+
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <a href="mailto:JEREMY@INSIDEOUTRENOVATION.COM">JEREMY@INSIDEOUTRENOVATION.COM</a>
+                        </div>
+
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <span>Lincoln, Nebraska</span>
+                        </div>
+
+                        <div class="contact-item">
+                            <span class="contact-icon">🌐</span>
+                            <a href="https://insideoutrenovation.com/" target="_blank">insideoutrenovation.com</a>
+                        </div>
+
+                        <div class="contact-item">
+                            <span class="contact-icon">📸</span>
+                            <a href="https://www.instagram.com/insideout_renovations/" target="_blank">@insideout_renovations</a>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 2rem;">
+                        <a href="tel:4024740028" class="btn btn-primary" style="font-size: 1.2rem;">Call Now for Free Quote</a>
+                    </div>
+                </div>
+
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d195027.48996433894!2d-96.86219768554688!3d40.813615999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8796be59ca561265%3A0x633a859b1fd5deb9!2sLincoln%2C%20NE!5e0!3m2!1sen!2sus!4v1637000000000!5m2!1sen!2sus"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>InsideOut Renovations</h3>
+                    <p>Lincoln's premier home renovation and remodeling contractor since 2019.</p>
+                    <p>Family-owned. Locally trusted.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/insideout_renovations/" target="_blank" title="Instagram">📸</a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=InsideOut+Renovations+Lincoln+NE" target="_blank" title="Google">🔍</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <a href="#services">Kitchen Remodeling</a>
+                    <a href="#services">Bathroom Remodeling</a>
+                    <a href="#services">Basement Finishing</a>
+                    <a href="#services">Home Additions</a>
+                    <a href="#services">Interior Painting</a>
+                    <a href="#services">Flooring Installation</a>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="#about">About Us</a>
+                    <a href="#reviews">Client Reviews</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="#contact">Contact</a>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <a href="tel:4024740028">📞 (402) 474-0028</a>
+                    <a href="mailto:JEREMY@INSIDEOUTRENOVATION.COM">📧 JEREMY@INSIDEOUTRENOVATION.COM</a>
+                    <p>📍 Lincoln, Nebraska</p>
+                    <p>⭐ 4.9 Stars - 27+ Reviews</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 InsideOut Renovations. All rights reserved. | Lincoln, NE Home Renovation Contractor</p>
+                <p>Kitchen Remodeling | Bathroom Remodeling | Basement Finishing | Home Additions</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const nav = document.getElementById('nav');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                nav.classList.remove('active');
+            });
+        });
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isActive = question.classList.contains('active');
+
+                // Close all FAQs
+                document.querySelectorAll('.faq-question').forEach(q => {
+                    q.classList.remove('active');
+                    q.nextElementSibling.classList.remove('active');
+                });
+
+                // Open clicked FAQ if it wasn't active
+                if (!isActive) {
+                    question.classList.add('active');
+                    answer.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href !== '') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        const headerHeight = header.offsetHeight;
+                        const targetPosition = target.offsetTop - headerHeight;
+
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe service cards, features, and other elements
+        document.querySelectorAll('.service-card, .feature, .review-card, .step').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>      
